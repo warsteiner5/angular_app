@@ -1,4 +1,17 @@
-
+<h2>Список продуктов</h2>
 <ul>
-  <li *ngFor="let product of products">{{ product.name }} : {{ product.brand }}</li>
+  <li *ngFor="let product of products">{{ product.name }} : {{ product.brand }} [<a class="link" (click)="deleteProduct(product._id)">Удалить</a>]</li>
 </ul>
+
+<h2>Добавить новый</h2>
+<form>
+  <div>
+    <label>Название:</label>
+    <input type="text" [(ngModel)]="productName" [ngModelOptions]="{standalone: true}"/>
+  </div>
+  <div>
+    <label>Бранд:</label>
+    <input type="text" [(ngModel)]="productBrand" [ngModelOptions]="{standalone: true}"/>
+  </div>
+  <button (click)="saveProduct()">Сохранить</button>
+</form>
