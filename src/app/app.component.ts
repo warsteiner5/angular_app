@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   }
 
   public ngOnInit(): void {
-    // this._getProducts();
+    this._getProducts();
   }
 
   public deleteProduct(id: string): void {
